@@ -1,7 +1,9 @@
 from django.http import HttpResponse
+from django.shortcuts import render
+
 
 def index(request):
-    return HttpResponse("<h2>Это мой первый проект на Django</h2>")
+    return render(request, 'main/index.html')
 
 def new(request):
-    return HttpResponse("<h2>Это вторая страница моего проекта на Django</h2>")
+    return render(request, 'main/new.html')
