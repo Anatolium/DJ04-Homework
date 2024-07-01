@@ -1,0 +1,22 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+<title>Новости погоды</title>
+{% endblock %}
+
+{% block content %}
+<h2>Новости погоды</h2>
+<hr>
+{% for new in news %}
+<div>
+    <h4> {{ new.title }} </h4>
+    <h6> {{ new.short_description }} </h6>
+    <hr>
+    <p> {{ new.text }} </p>
+    <p><strong>Автор:</strong> {{ new.user.username }}</p>
+<!--    <p> Опубликовано: {{ new.pub_date }} </p>-->
+    <hr>
+</div>
+{% endfor %}
+
+{% endblock %}
