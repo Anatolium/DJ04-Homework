@@ -1,0 +1,28 @@
+{% extends 'films/layout.html' %}
+
+{% block title %}
+<title>Страница для добавления фильмов</title>
+{% endblock %}
+
+{% block content %}
+<li><a href="{% url 'movie_list' %}">Список фильмов</a></li><br>
+<h5>Страница добавления фильмов</h5>
+<div class="container mt-5">
+    <h5 class="mb-4">Добавить фильм</h5>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            {{form.title}}
+        </div>
+        <div class="form-group">
+            {{form.short_description}}
+        </div>
+        <div class="form-group">
+            {{form.text}}
+        </div>
+        <button type="submit" class="btn btn-primary">Добавить фильм</button>
+    </form>
+    <p>{{error}}</p>
+</div>
+
+{% endblock %}
