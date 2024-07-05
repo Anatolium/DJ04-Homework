@@ -1,11 +1,9 @@
 from django.db import models
 
 class MovieDatabase(models.Model):
-    title = models.CharField('Название фильма', max_length=50)
-    short_description = models.CharField('Описание фильма', max_length=200)
+    title = models.CharField('Название фильма', max_length=100)
+    short_description = models.CharField('Описание фильма', max_length=1000)
     text = models.TextField('Отзыв о фильме')
-    pub_date = models.DateTimeField('Дата публикации')
 
     def __str__(self):
         return self.title
-
